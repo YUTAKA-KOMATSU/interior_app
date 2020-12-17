@@ -41,7 +41,7 @@ password → sample1<br>
 - belongs_to :user
 - has_many :comments
 
-## comments テーブル
+## comments
 | Column    | Type       | Options                         |
 | --------- | ---------- | ------------------------------- |
 | text      | text       | null: false                     |
