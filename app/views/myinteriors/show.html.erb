@@ -1,0 +1,68 @@
+<div class="back">  
+  <%= link_to myinteriors_path, class: :back__btn do %>
+    <button>トップページに戻る</button>
+  <% end %>
+</div>
+<main class="main">
+  <div class="inner">
+    <div class="myinterior__wrapper">
+      <%= link_to @myinterior.user.nickname, user_path(@myinterior.user.id), class: :myinterior__user %>
+      <% if user_signed_in? && current_user.id == @myinterior.user_id %>
+        <div class="myinterior__manage">
+          <%= link_to "編集する", edit_myinterior_path(@myinterior.id), class: :myinterior__btn %>
+          <%= link_to "削除する", myinterior_path(@myinterior.id), method: :delete, class: :myinterior__btn %>
+        </div>
+      <% end %>
+      <div class="myinterior__image">
+        <%= image_tag(@myinterior.image, size: '400x300') %>
+      </div>
+      <div class="myinterior__body">
+        <div class="myinterior__detail">
+          <p class="detail__title">タイトル</p>
+          <p class="detail__message">
+            <%= @myinterior.title %>
+          </p>
+        </div>
+        <div class="myinterior__detail">
+          <p class="detail__title">コンセプト</p>
+          <p class="detail__message">
+            <%= @myinterior.concept %>
+          </p>
+        </div>
+        <div class="myinterior__detail">
+          <p class="detail__title">インテリアタイプ</p>
+          <p class="detail__message">
+            <%= @myinterior.category[:name] %>
+          </p>
+        </div>
+      </div>
+      <div class="myinterior__comments">
+      <% if user_signed_in? %>
+        <%= form_with model: [@myinterior, @comment], local: true do |f| %>
+          <div class="field">
+          <% if current_user.id == @myinterior.user_id %>
+            <%= f.label :text, "質問に答える" %><br />
+          <% else %>
+            <%= f.label :text, "投稿者へ質問" %><br />
+          <% end %>
+            <%= f.text_field :text %>
+          </div>
+          <div class="actions">
+            <%= f.submit "送信する", class: :form__btn  %>
+          </div>
+        <% end %> 
+      <% end %>
+        <ul class="comments_lists">
+          <% if @comments %>
+            <% @comments.each do |comment|%>
+              <li class="comments_list">
+                <%= comment.text %>
+                <%= link_to comment.user.nickname, user_path(comment.user.id) %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

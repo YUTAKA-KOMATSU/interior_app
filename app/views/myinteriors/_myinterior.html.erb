@@ -1,0 +1,9 @@
+<div class="card">
+  <%= link_to image_tag( myinterior.image, class: :card__img, size: '400x300' ), myinterior_path(myinterior.id) %>
+  <div class="card__body">
+    <%= link_to myinterior.title, myinterior_path(myinterior.id), class: :card__title %>
+    <p class="card__summary">
+      <%= myinterior.concept %>
+    </p>
+  </div>
+</div>

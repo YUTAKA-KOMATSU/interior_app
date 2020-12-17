@@ -1,0 +1,136 @@
+<div class="main">
+  <div class="interior-content">
+    <div>
+      <%= image_tag "13.png" %>
+    </div>
+    <div>
+      <%= image_tag "14.png" %>
+    </div>
+    <div>
+      <%= image_tag "15.png" %>
+    </div>
+    <div>
+      <%= image_tag "3.png" %>
+    </div>
+    <div>
+      <%= image_tag "4.png" %>
+    </div>
+    <div>
+      <%= image_tag "5.png" %>
+    </div>
+  </div>
+  <div class="title">
+    <h1>〜インテリア紹介〜</h1>
+    <p>あなたのお気に入りのインテリアを見つけましょう！！</p>
+  </div>
+  <div class="interior-contents">
+    <div class="scroll-fade">
+      <%= image_tag "1.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>Cafeインテリア</p>
+        <p>近年流行りのインスタ映えをおうちでもしませんか？天然木のダイニングテーブルを置くだけでお部屋のイメージがガラリと変わります。インスタ映え間違いなし！！</p>
+      </div>
+    </div>
+    <div class="scroll-fade">
+      <%= image_tag "2.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>北欧インテリア</p>
+        <p>無垢材を使用した家具を選ぶことで、優しい雰囲気が部屋中に溢れます。またナチュラルなテーブルにカラフルなチェアを合わせることでまた違った雰囲気がでます。</p>
+      </div>
+    </div>
+  </div>
+  <div class="interior-contents">
+    <div class="scroll-fade">
+      <%= image_tag "8.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>シンプルモダンインテリア</p>
+        <p>モノトーンカラーでシンプルかつ高級感のあるインテリア。レザーソファにガラステーブルを組み合わせるとシャープなリビングに仕上がります。クールに仕上げたい方は是非！！</p>
+      </div>
+    </div>
+    <div class="scroll-fade">
+      <%= image_tag "13.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>和室インテリア</p>
+        <p>昔ながらの和室をおしゃれにrenovationされる方も増えています。「和」を基調にした家具も最近ふえてきましたので、是非和室インテリアにチャレンジしてみてください！！</p>
+      </div>
+    </div>
+  </div>
+  <div class="interior-contents">
+    <div class="scroll-fade">
+      <%= image_tag "11.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>ベッドルームインテリア（白）</p>
+        <p>白を基調にしたベッドルーム。何もない白の空間は１日の疲れを癒してくれる効果があります。窓が開放的なので朝の目覚めも気持ち良いこと間違いなし！！</p>
+      </div>
+    </div>
+    <div class="scroll-fade">
+      <%= image_tag "14.png", class:"interior-pic" %>
+      <div class="box17">
+        <p>ベッドルームインテリア（茶）</p>
+        <p>オシャレの定番といえばウォルナット！！というイメージをそのままベッドルームに組み込まれています。ウォルナット独特の暖かさを演出してくれるお部屋です。</p>
+      </div>
+    </div>
+  </div>
+  <div class="interior-content">
+    <div>
+      <%= image_tag "7.png", class:"interior-pic" %>
+    </div>
+    <div>
+      <%= image_tag "8.png", class:"interior-pic" %>
+    </div>
+    <div>
+      <%= image_tag "9.png", class:"interior-pic" %>
+    </div>
+    <div>
+      <%= image_tag "10.png", class:"interior-pic" %>
+    </div>
+    <div>
+      <%= image_tag "11.png", class:"interior-pic" %>
+    </div>
+    <div>
+      <%= image_tag "12.png", class:"interior-pic" %>
+    </div>
+  </div>
+</div>  
+<div class="main">
+  <div class="title">
+    <h1>〜Everyone's Room〜</h1>
+    <p>自分の部屋を共有してみよう！！</p>
+    <%= link_to "インテリアを共有する", new_myinterior_path, class:"nav__btn2" %>
+    <%= link_to "SHOW ALL 〜みんなのインテリアを見る〜", show_all_index_path, class:"nav__btn2" %>
+  </div>
+  <div class="card__wrapper">
+  <%= render partial: "myinterior", collection: @myinteriors %>
+  </div>
+</div>
+<div class="main">
+  <div class="title">
+    <h1>〜SHOP INFORMATION〜</h1>
+    <p>おすすめの家具屋さん情報</p>
+    <%= link_to "お店の場所を調べる", maps_path, class:"nav__btn2" %>
+    <p>Famous stores in Japan 🇯🇵</p>
+      <div class="imformation">
+        <%= link_to "カリモク家具", "https://www.karimoku.co.jp/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "arflex(アルフレックス)", "https://www.arflex.co.jp/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "IDC大塚家具", "https://www.idc-otsuka.jp/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "ACTUS(アクタス)", "https://www.actus-interior.com/", target: :_blank, class:"nav__btn2" %>
+      </div>
+      <div class="imformation">
+        <%= link_to "unico", "https://www.unico-fan.co.jp/shop/default.aspx", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "maruni", "https://www.maruni.com/jp/", target: :_blank, class:"nav__btn2" %>
+      </div>
+  </div>
+  <div class="title">
+    <p>Antique furniture 🇬🇧 🇮🇹 🇺🇸 ~アンティーク家具~</p>
+    <div class="imformation">
+        <%= link_to "DREXEL HERITAGE(ドレクセルヘリテイジ)", "http://www.libura.co.jp/brand/drexel-heritage/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "Lloyd's Antiques(ロイズアンティークス)", "https://www.lloyds.co.jp/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "Medea(メデア)", "https://www.idc-otsuka.jp/extra/medea/", target: :_blank, class:"nav__btn2" %>
+    </div>
+    <div class="imformation">
+        <%= link_to "domani(ドマーニ)", "https://www.domani.jp/", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "英国アンティーク", "#", target: :_blank, class:"nav__btn2" %>
+        <%= link_to "仏アンティーク", "#", target: :_blank, class:"nav__btn2" %>
+    </div>
+  </div>
+</div>

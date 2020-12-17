@@ -1,0 +1,36 @@
+<div class="back">
+  <%= link_to :back, class: :back__btn do %>
+    <button>前ページに戻る</button>
+  <% end %>
+</div>
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= @user.nickname %>さんの情報
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">インテリアタイプ</th>
+            <td class="table__col2"><%= @user.category[:name] %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= @user.nickname %>さんのインテリア
+      </h2>
+      <div class="user__card">
+      <% unless @myinterior.empty? %>
+        <%= render partial: "myinteriors/myinterior", collection: @myinterior %>
+      <% else %>
+        <%= image_tag "nocontentyet.jpg", class: :card__img, size: '400x300' %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

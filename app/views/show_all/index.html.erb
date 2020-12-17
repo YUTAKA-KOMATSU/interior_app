@@ -1,0 +1,15 @@
+<div class="back">
+  <%= link_to :back, class: :back__btn do %>
+    <button>トップページに戻る</button>
+  <% end %>
+</div>
+</div>
+<div class="main">
+  <div class="title">
+    <h1>〜Everyone's Room〜</h1>
+    <p>みんなのインテリア紹介</p>
+  </div>
+  <div class="card__wrapper">
+  <%= render partial: "myinteriors/myinterior", collection: @myinterior %>
+  </div>
+</div>
