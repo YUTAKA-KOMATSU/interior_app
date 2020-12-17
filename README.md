@@ -16,7 +16,42 @@ password → sample1
 ・課題解決
 このアプリではインテリアをこだわりたいが、どのようなインテリアスタイルがあるのか分からないという課題を解決するものです。
 
-・要件
+・要件(テーブル設計)
+## users
+|Column            |Type           |Options                         |
+|----------------- |-------------- |------------------------------- |
+|email             | string        | null: false, unique: true      |
+|nickname          | string        | null: false                    |
+|password          | string        | null: false                    |
+|category_id       | integer       | null: false                    |
+
+### Association
+- has_many :myinteriors
+- has_many :comments
+
+## myinteriors
+|Column                 |Type           |Options                         |
+|---------------------- |-------------- |------------------------------- |
+|title                  | string        | null: false                    |
+|concept                | text          | null: false                    |
+|category_id            | integer       | null: false                    |
+|user                   | references    | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- has_many :comments
+
+## comments テーブル
+| Column    | Type       | Options                         |
+| --------- | ---------- | ------------------------------- |
+| text      | text       | null: false                     |
+| user      | references | null: false, foreign_key: true  |
+| myinterior| references | null: false, foreign_key: true  |
+
+### Association
+- belongs_to :myinterior
+- belongs_to :user
+
 
 ・利用方法と実装した機能についての説明
 １テスト用アカウントでログイン。
@@ -34,3 +69,4 @@ password → sample1
 https://gyazo.com/8426e12bf971785e44b2f97b777c9695
 
 ・ローカルでの動作方法
+https://github.com/YUTAKA-KOMATSU/interior_app.git
