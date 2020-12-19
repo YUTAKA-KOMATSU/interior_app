@@ -277,6 +277,7 @@ a {
   display: flex;
   justify-content: center;
   padding-top: 16px;
+  margin-bottom: 20px;
 }
 .myinterior__btn{
   display: block;
